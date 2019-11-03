@@ -23,6 +23,16 @@ enum FlightStatus {
     case Canceled
 }
 
+struct Airport {
+    let name: String
+}
+
+struct Flight {
+    let number: String
+    let departureTime: Date?
+    let terminal: String?
+}
+
 
 //: ## 2. Create 3 flights and add them to a departure board
 //: a. For the departure time, use `Date()` for the current time
