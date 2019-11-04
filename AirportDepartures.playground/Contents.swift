@@ -65,8 +65,10 @@ var flightThree = Flight(number: "SK287", departureTime: Date(), terminal: "4", 
 var departureBoard = DepartureBoard(airport: jfk)
 
 departureBoard.flightList.append(flightTwo)
+departureBoard.flightList.append(flightThree)
+departureBoard.flightList.append(flightOne)
 
-print(departureBoard.airport)
+
 
 
 //: ## 3. Create a free-standing function that can print the flight information from the `DepartureBoard`
@@ -77,8 +79,14 @@ print(departureBoard.airport)
 //: c. Make your `FlightStatus` enum conform to `String` so you can print the `rawValue` String values from the `enum`. See the [enum documentation](https://docs.swift.org/swift-book/LanguageGuide/Enumerations.html).
 //:
 //: d. Print out the current DepartureBoard you created using the function
+func printDepartures(departureBoard: DepartureBoard) {
+    for departure in departureBoard.flightList {
+        print(departure.status)
+    }
+    
+}
 
-
+printDepartures(departureBoard: departureBoard)
 
 
 //: ## 4. Make a second function to print print an empty string if the `departureTime` is nil
@@ -95,7 +103,14 @@ print(departureBoard.airport)
 //:     Destination: Los Angeles Airline: Delta Air Lines Flight: KL 6966 Departure Time:  Terminal: 4 Status: Canceled
 //:     Destination: Rochester Airline: Jet Blue Airways Flight: B6 586 Departure Time: 1:26 PM Terminal:  Status: Scheduled
 //:     Destination: Boston Airline: KLM Flight: KL 6966 Departure Time: 1:26 PM Terminal: 4 Status: Scheduled
+func printDepartures2(departureBoard: DepartureBoard) {
+    for departure in departureBoard.flightList {
+        print(departure.status)
+    }
+    
+}
 
+printDepartures(departureBoard: departureBoard)
 
 
 //: ## 5. Add an instance method to your `DepatureBoard` class (above) that can send an alert message to all passengers about their upcoming flight. Loop through the flights and use a `switch` on the flight status variable.
